@@ -666,7 +666,19 @@ body {
 /* Responsive */
 @media (max-width: 1024px) {
     .hero-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
     }
 
     .hero-name {
