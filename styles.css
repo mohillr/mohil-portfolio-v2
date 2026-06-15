@@ -171,7 +171,6 @@ body {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
-    border: 8px solid var(--primary);
     outline: 8px solid var(--primary);
     outline-offset: 8px;
     box-shadow: 0 0 30px rgba(212, 160, 23, 0.6), 0 20px 60px rgba(212, 160, 23, 0.3);
