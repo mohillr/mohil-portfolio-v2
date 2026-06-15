@@ -691,12 +691,13 @@ body {
 
     .hamburger {
         display: flex;
+        z-index: 1001;
     }
 
     .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
+        display: none !important;
+        position: fixed;
+        top: 70px;
         left: 0;
         right: 0;
         background: var(--bg-secondary);
@@ -705,18 +706,23 @@ body {
         gap: 0;
         padding: 1rem 0;
         border-radius: 0;
+        z-index: 999;
+        width: 100%;
     }
 
     .nav-menu.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-link {
         padding: 0.75rem 2rem;
+        display: block;
+        width: 100%;
     }
 
     .nav-link-contact {
         margin: 0.5rem 1rem;
+        display: block;
     }
 
     .hero {
