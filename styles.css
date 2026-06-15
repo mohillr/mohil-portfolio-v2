@@ -66,6 +66,7 @@ body {
     color: var(--text);
     text-decoration: none;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .logo:hover {
@@ -680,6 +681,14 @@ body {
 }
 
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -836,11 +845,11 @@ body {
 
 @media (max-width: 480px) {
     .nav-container {
-        padding: 1rem 1rem;
+        padding: 0.8rem 1rem;
     }
 
     .logo {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
 
     .hero {
