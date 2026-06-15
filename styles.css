@@ -168,9 +168,11 @@ body {
 .hero-image img {
     width: 100%;
     max-width: 400px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
     border: 8px solid var(--primary);
-    box-shadow: 0 20px 60px rgba(212, 160, 23, 0.3);
+    box-shadow: 0 0 30px rgba(212, 160, 23, 0.6), 0 20px 60px rgba(212, 160, 23, 0.3);
     animation: float 6s ease-in-out infinite;
 }
 
