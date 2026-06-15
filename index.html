@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohill R - Python Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" onclick="scrollToSection('home')">Mohill R</a>
+            <ul class="nav-menu">
+                <li><a href="#about" onclick="scrollToSection('about')" class="nav-link">About</a></li>
+                <li><a href="#skills" onclick="scrollToSection('skills')" class="nav-link">Skills</a></li>
+                <li><a href="#education" onclick="scrollToSection('education')" class="nav-link">Education</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')" class="nav-link nav-link-contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-text">Web Design</div>
+        <div class="hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <p class="hero-greeting">Hello, I'm</p>
+                    <h1 class="hero-name">Mohill R</h1>
+                    <p class="hero-role">Chennai, India • Student • Python Developer</p>
+                <p class="hero-description">
+                    I love turning ideas into working code — from Python scripts that automate everyday tasks to websites that look great on any screen.
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('contact')">Get In Touch</button>
+                        <a href="resume.pdf" download class="btn btn-secondary">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="profile.jpeg" alt="Mohill R"
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">Get In Touch</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who I Am</h2>
+                <div class="divider"></div>
+                <span class="section-label">About Me</span>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm <strong>Mohill R</strong>, based in <strong>Chennai, India</strong>. I'm a recent 12th-grade graduate with a deep curiosity for technology and programming. What started as experimenting with small Python scripts has grown into a genuine passion for building software that is useful, readable, and well designed.
+                    </p>
+                    <p>
+                        Python is where I spend most of my time — writing automation tools, practicing algorithms, and building small apps that solve real problems. Lately I've also been learning web development with HTML, CSS, and JavaScript so I can share my work online and create polished user experiences.
+                    </p>
+                    <p>
+                        Outside of code, I enjoy breaking problems into smaller pieces, documenting what I learn, and pushing myself to finish projects from start to finish. I'm actively looking for opportunities to grow — whether that's internships, open-source contributions, or collaborating on interesting ideas.
+                    </p>
+                </div>
+                <div class="about-info">
+                    <div class="info-card">
+                        <div class="info-item">
+                            <h3>Name</h3>
+                            <p>Mohill R</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Location</h3>
+                            <p>Chennai, India</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-item">
+                            <h3>Status</h3>
+                            <p>12th Grade Completed<br>Self-taught Developer</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Primary Skill</h3>
+                            <p>Python</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>What I Know</h2>
+                <div class="divider"></div>
+                <span class="section-label">Skills</span>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card skill-highlighted">
+                    <div class="skill-header">
+                        <h3>Python</h3>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <p>My primary language for scripting, automation, and building applications.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h3>SQL</h3>
+                        <span class="skill-percent">65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                    <p>Writing queries to manage, retrieve, and manipulate data in relational databases.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h3>Problem Solving</h3>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                    <p>Logical thinking and breaking down challenges step by step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Background</h2>
+                <div class="divider"></div>
+                <span class="section-label">Education</span>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <span class="status-badge">COMPLETED</span>
+                        <h3>2nd PUC (12th Grade)</h3>
+                        <p class="institution">Narayana PU College, Bengaluru · Karnataka State Board</p>
+                        <p class="percentage">85.5%</p>
+                        <p class="description">Completed pre-university education with a strong focus on mathematics and computer science. During this period I deepened my Python knowledge, built my first automation tools, and started learning web development — eventually creating projects I could share publicly.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <span class="status-badge">COMPLETED</span>
+                        <h3>1st PUC (11th Grade)</h3>
+                        <p class="institution">Narayana PU College, Bengaluru · Karnataka State Board</p>
+                        <p class="percentage">79.5%</p>
+                        <p class="description">Chose the science stream with computer science as a core subject. This is where programming moved from curiosity to a genuine focus — I started writing Python scripts to solve small everyday problems and exploring how software actually works.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <span class="status-badge">COMPLETED</span>
+                        <h3>10th Grade (SSLC)</h3>
+                        <p class="institution">Everwin Matriculation Higher Secondary School, Chennai · Tamil Nadu State Board</p>
+                        <p class="percentage">79.6%</p>
+                        <p class="description">Completed secondary schooling with strong performance in mathematics and logical reasoning. The early exposure to basic computing here sparked my interest in how computers can be programmed to do useful things.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <div class="divider"></div>
+                <span class="section-label">Contact</span>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new ideas, projects, or opportunities.</p>
+                    
+                    <a href="resume.pdf" download class="resume-btn">
+                        <span>📄</span> Download My Resume
+                    </a>
+                    
+                    <div class="contact-details">
+                        <a href="mailto:your-email@example.com" class="contact-item">
+                            <span class="contact-icon">✉</span>
+                            <span>your-email@example.com</span>
+                        </a>
+                        <a href="tel:+91XXXXXXXXXX" class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>+91 XXXXXXXXXX</span>
+                        </a>
+                        <a href="https://maps.google.com/?q=Chennai,India" class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Chennai, India</span>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com" class="social-link" title="GitHub">GitHub</a>
+                        <a href="https://linkedin.com" class="social-link" title="LinkedIn">LinkedIn</a>
+                        <a href="https://instagram.com" class="social-link" title="Instagram">Instagram</a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required name="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required name="email">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-message" id="formMessage" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Mohill R. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
