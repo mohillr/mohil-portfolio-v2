@@ -66,7 +66,6 @@ body {
     color: var(--text);
     text-decoration: none;
     transition: color 0.3s ease;
-    white-space: nowrap;
 }
 
 .logo:hover {
@@ -154,7 +153,7 @@ body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
 }
@@ -164,7 +163,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    order: 1;
 }
 
 .hero-image img {
@@ -182,12 +180,8 @@ body {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
-}
-
-.hero-text {
-    position: relative;
+}   position: relative;
     z-index: 1;
-    order: 2;
 }
 
 .hero-greeting {
@@ -671,6 +665,22 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
     .hero-name {
         font-size: 3.5rem;
     }
@@ -681,23 +691,14 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-container {
-        padding: 1rem 1rem;
-    }
-
-    .logo {
-        font-size: 1rem;
-    }
-
     .hamburger {
         display: flex;
-        z-index: 1001;
     }
 
     .nav-menu {
-        display: none !important;
-        position: fixed;
-        top: 70px;
+        display: none;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
         background: var(--bg-secondary);
@@ -706,23 +707,18 @@ body {
         gap: 0;
         padding: 1rem 0;
         border-radius: 0;
-        z-index: 999;
-        width: 100%;
     }
 
     .nav-menu.active {
-        display: flex !important;
+        display: flex;
     }
 
     .nav-link {
         padding: 0.75rem 2rem;
-        display: block;
-        width: 100%;
     }
 
     .nav-link-contact {
         margin: 0.5rem 1rem;
-        display: block;
     }
 
     .hero {
@@ -768,8 +764,13 @@ body {
         gap: 2rem;
     }
 
+    .hero-text {
+        order: 2;
+    }
+
     .hero-image {
-        margin-top: 0;
+        order: 1;
+        margin-top: 1rem;
         display: flex;
         justify-content: center;
     }
@@ -851,11 +852,11 @@ body {
 
 @media (max-width: 480px) {
     .nav-container {
-        padding: 0.8rem 1rem;
+        padding: 1rem 1rem;
     }
 
     .logo {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
     }
 
     .hero {
@@ -896,6 +897,14 @@ body {
     .btn {
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
     }
 
     .hero-image img {
