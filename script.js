@@ -1,11 +1,23 @@
-// Navbar scroll effect
+emailjs.init("BwXsl_1EgReOL4Apr");
+
+const supabaseUrl = "https://ipfxklpmfzmkrbsfluig.supabase.co";
+const supabaseKey = "sb_publishable_sF3CDeHMtqLudsl1cVW1Nw_JhwxX3L-";
+
+// safety check (IMPORTANT FIX)
+if (!window.supabase) {
+    throw new Error("Supabase library not loaded. Check CDN script.");
+}
+
+// create client
+const client = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+console.log("Supabase loaded:", client);
+
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 20) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    if (!navbar) return;
+
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
 });
 
 // Smooth scroll to section
@@ -41,38 +53,52 @@ document.addEventListener('click', (e) => {
 });
 
 // Contact form handling
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Simulate form submission (replace with actual backend call)
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    document.getElementById('contactForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
 
-    setTimeout(() => {
-        // Show success message
+        const formData = new FormData(this);
+
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
+
         const formMessage = document.getElementById('formMessage');
-        formMessage.textContent = '✓ Message sent successfully! Thank you for reaching out.';
-        formMessage.classList.add('success');
-        formMessage.style.display = 'block';
 
-        // Reset form
-        this.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+        const { error } = await client
+            .from('contacts')
+            .insert([
+                {
+                    name,
+                    email,
+                    message
+                }
+            ]);
+        if (error) {
+            console.error(error);
+            formMessage.textContent = 'Failed to send message';
+            formMessage.style.display = 'block';
+        } else {
 
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-            formMessage.classList.remove('success');
-        }, 5000);
-    }, 1000);
+            // ✅ STEP 7: SEND EMAIL (ADD HERE)
+            emailjs.send("service_sdugm3b", "template_0k8przf", {
+                name: name,
+                email: email,
+                message: message
+            }).then(() => {
+                console.log("Email sent successfully!");
+            }).catch((err) => {
+                console.error("EmailJS error:", err);
+            });
+
+            formMessage.textContent = '✓ Message sent successfully!';
+            formMessage.style.display = 'block';
+
+            this.reset();
+        }
+    });
+
 });
 
 // Intersection Observer for animations
