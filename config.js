@@ -5,7 +5,7 @@ window.MESSAGE_VIEWER_CONFIG = {
   supabase: {
     url: "https://ipfxklpmfzmkrbsfluig.supabase.co",
     anonKey: "sb_publishable_sF3CDeHMtqLudsl1cVW1Nw_JhwxX3L-",
-    table: "messages"
+    table: "contacts"
   },
 
   fields: {
